@@ -2,9 +2,9 @@
 On-Device based solution to run LLMs inside android phones 
 
 ## Project Progress 
-[x] Build functional UI
-[] Bind LLamaSharp on app
-[] Working on GPU based solutions
+- [x] Build functional UI
+- [ ] Bind LLamaSharp on app
+- [ ] Working on GPU based solutions
 
 
 ## Project State
