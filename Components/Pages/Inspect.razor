@@ -1,0 +1,52 @@
+﻿@page "/stats"
+
+<main>
+    <div>
+        <header class="surface">
+            <nav class="top surface">
+                <button class="circle transparent ">
+                    <i>arrow_back</i>
+                    <a href="/"></a>
+                </button>
+                <h6>System Inspector</h6>
+                <div class="max"></div>
+            </nav>
+        </header>
+
+        <div class="responsive scroll">
+            <div class="large-margin">
+                <div class="row padding ">
+                    <button class="transparent"><i>memory</i></button>
+                    <div class="max">
+                        <h6 class="small">Processor</h6>
+                    </div>
+                    <label>30 %</label>
+                </div>
+                <progress value="30" max="100"></progress>
+            </div>
+
+
+            <div class="large-margin">
+                <div class="row padding ">
+                    <button class="transparent"><i>memory_alt</i></button>
+                    <div class="max">
+                        <h6 class="small">Memory</h6>
+                    </div>
+                    <label>50 %</label>
+                </div>
+                <progress value="50" max="100"></progress>
+            </div>
+
+            <div class="large-margin">
+                <div class="row padding ">
+                    <button class="transparent"><i>hard_disk</i></button>
+                    <div class="max">
+                        <h6 class="small">Storage</h6>
+                    </div>
+                    <label>80 %</label>
+                </div>
+                <progress value="80" max="100"></progress>
+            </div>
+        </div>
+    </div>
+</main>
