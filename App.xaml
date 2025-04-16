@@ -1,0 +1,43 @@
+﻿<?xml version = "1.0" encoding = "UTF-8" ?>
+<Application xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Sigma.App"
+             x:Class="Sigma.App.App">
+    <Application.Resources>
+        <ResourceDictionary>
+
+            <Color x:Key="Primary">#006e29</Color>
+            <Color x:Key="Secondary">#516350</Color>
+            <Color x:Key="Tertiary">#39656c</Color>
+            <Color x:Key="UserMessage">#76dc82</Color>
+            <Color x:Key="OtherMessage">#666666</Color>
+            
+            <!-- Shell Styles -->
+            <Style x:Key="BaseShellStyle" TargetType="Shell">
+                <Setter Property="Shell.BackgroundColor" Value="{DynamicResource Primary}"/>
+                <Setter Property="Shell.ForegroundColor" Value="White"/>
+                <Setter Property="Shell.TitleColor" Value="White"/>
+                <Setter Property="Shell.DisabledColor" Value="#B4FFFFFF"/>
+                <Setter Property="Shell.UnselectedColor" Value="#95FFFFFF"/>
+                <Setter Property="Shell.TabBarBackgroundColor" Value="{DynamicResource Primary}"/>
+                <Setter Property="Shell.TabBarForegroundColor" Value="White"/>
+                <Setter Property="Shell.TabBarUnselectedColor" Value="#95FFFFFF"/>
+                <Setter Property="Shell.TabBarTitleColor" Value="White"/>
+            </Style>
+
+            <!-- Title View Style -->
+            <Style x:Key="TitleViewStyle" TargetType="NavigationPage">
+                <Setter Property="BarBackgroundColor" Value="{DynamicResource Primary}"/>
+                <Setter Property="BarTextColor" Value="White"/>
+            </Style>
+
+            <!-- Menu Button Style -->
+            <Style x:Key="MenuButtonStyle" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="Transparent"/>
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="FontSize" Value="24"/>
+                <Setter Property="Padding" Value="10"/>
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

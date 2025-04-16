@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="456" height="456" viewBox="0 0 456 456" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <!-- Sigma Symbol -->
+    <g transform="translate(0, 0)">
+        <!-- Main Sigma Curve -->
+        <path d="M 228,100 
+                 C 300,100 356,156 356,228
+                 C 356,300 300,356 228,356
+                 C 156,356 100,300 100,228
+                 C 100,156 156,100 228,100
+                 Z" 
+              fill="none" 
+              stroke="white" 
+              stroke-width="30" 
+              stroke-linecap="round"/>
+        
+        <!-- Horizontal Line -->
+        <line x1="100" y1="228" x2="356" y2="228" 
+              stroke="white" 
+              stroke-width="30" 
+              stroke-linecap="round"/>
+        
+        <!-- Vertical Line -->
+        <line x1="228" y1="100" x2="228" y2="356" 
+              stroke="white" 
+              stroke-width="30" 
+              stroke-linecap="round"/>
+    </g>
+</svg>

@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Sigma.App.Pages"
+             xmlns:vm="clr-namespace:Sigma.App.ViewModels"
+             x:Class="Sigma.App.Pages.MainPage"
+             Title="Chat"
+             BackgroundColor="{AppThemeBinding Light=White, Dark=#1A1A1A}">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="UserMessageColor">#007AFF</Color>
+            <Color x:Key="BotMessageColor">#E5E5EA</Color>
+            <Color x:Key="UserTextColor">White</Color>
+            <Color x:Key="BotTextColor">Black</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <Grid RowDefinitions="Auto,*,Auto">
+        <!-- Chat Messages -->
+        <CollectionView Grid.Row="1" 
+                       ItemsSource="{Binding Messages}"
+                       Margin="10"
+                       VerticalOptions="FillAndExpand">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame Margin="0,5" 
+                           Padding="10"
+                           HorizontalOptions="{Binding IsUser, Converter={StaticResource BoolToLayoutOptionsConverter}}"
+                           BackgroundColor="{Binding IsUser, Converter={StaticResource BoolToColorConverter}}"
+                           CornerRadius="10">
+                        <Label Text="{Binding Message}" 
+                               TextColor="{Binding IsUser, Converter={StaticResource BoolToTextColorConverter}}"
+                               FontSize="14"/>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <!-- Input Area -->
+        <Grid Grid.Row="2" 
+              ColumnDefinitions="*,Auto" 
+              Padding="10"
+              BackgroundColor="{AppThemeBinding Light=#F2F2F7, Dark=#2C2C2E}">
+            <Entry Text="{Binding InputText}" 
+                   Placeholder="Type a message..."
+                   PlaceholderColor="Gray"
+                   BackgroundColor="{AppThemeBinding Light=White, Dark=#3A3A3C}"
+                   TextColor="{AppThemeBinding Light=Black, Dark=White}"
+                   ReturnCommand="{Binding SendCommand}"
+                   ReturnCommandParameter="{Binding InputText}"/>
+            
+            <Button Text="Send" 
+                    Grid.Column="1" 
+                    Command="{Binding SendCommand}"
+                    BackgroundColor="{DynamicResource Primary}"
+                    TextColor="White"
+                    Margin="10,0,0,0"
+                    IsEnabled="{Binding IsProcessing, Converter={StaticResource InverseBooleanConverter}}"/>
+        </Grid>
+    </Grid>
+
+</ContentPage>
