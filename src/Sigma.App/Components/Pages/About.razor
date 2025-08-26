@@ -1,0 +1,96 @@
+﻿@page "/about"
+@using Sigma.App.Components.Layout
+
+<main class="bg-light vh-100 d-flex flex-column">
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-dark bg-dark sticky-top">
+        <div class="container-fluid">
+            <!-- Mobile sidebar toggle -->
+            <button class="btn btn-outline-light d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarOffcanvas" aria-controls="sidebarOffcanvas">
+                ☰
+            </button>
+            <span class="navbar-brand mb-0 h1">Project Sigma</span>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="container-fluid flex-grow-1">
+        <div class="row">
+
+            <!-- STATIC Sidebar (Desktop & Larger) -->
+            <div class="col-md-2 d-none d-md-flex flex-column bg-white border-end p-3">
+                <SideBar></SideBar>
+            </div>
+
+            <div div class="col-md-10 overflow-auto" style="max-height: calc(100vh - 56px);">
+                <br />
+                <br />
+                <div class="card">
+                    <div class="card-header">
+                        <h1>About This App</h1>
+                    </div>
+                    <div class="card-body">
+                        <p>Sigma is a next-generation AI companion designed to bring the power of large language models directly to your Android device — no cloud required.</p>
+                        <br />
+                        <p>Built with .NET MAUI and powered by libllama, Sigma enables you to run LLMs locally, maintaining full performance while keeping your data private and secure. Whether you're experimenting with AI, building intelligent workflows, or simply enjoying conversations with a model, Sigma is built to give you smooth, on-device inference tailored to your needs.</p>
+                        <br />
+                        <p>
+                            Key Features :
+                        </p>
+                        <ul>
+                            <li>
+                                🚀 On-Device LLMs — Run models locally on your Android device.
+                            </li>
+
+                            <li>
+                                🔑 Privacy-First — Your data never leaves your phone.
+                            </li>
+
+                            <li>
+                                🎯 Optimized Performance — Powered by libllama for efficient inference on mobile.
+                            </li>
+
+                            <li>
+                                🌐 Offline Access — No internet required for model execution.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+
+                
+ 
+            </div>
+        </div>
+    </div>
+
+    <!-- OFFCANVAS Sidebar (Mobile only) -->
+    <div class="offcanvas offcanvas-start d-md-none" tabindex="-1" id="sidebarOffcanvas">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title">Settings</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body d-flex flex-column">
+            <Sigma.App.Components.Layout.SideBar></Sigma.App.Components.Layout.SideBar>
+        </div>
+    </div>
+</main>
+
+<div class="modal fade" id="error-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>

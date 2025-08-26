@@ -1,0 +1,68 @@
+﻿@page "/settings"
+@using Sigma.App.Components.Layout
+
+<main class="bg-light vh-100 d-flex flex-column">
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-dark bg-dark sticky-top">
+        <div class="container-fluid">
+            <!-- Mobile sidebar toggle -->
+            <button class="btn btn-outline-light d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarOffcanvas" aria-controls="sidebarOffcanvas">
+                ☰
+            </button>
+            <span class="navbar-brand mb-0 h1">Project Sigma</span>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="container-fluid flex-grow-1">
+        <div class="row h-100">
+            <div class="col-sm-12">
+
+                <br />
+                <div class="card">
+                    <div class="card-header">
+                        <p>System Prompt </p>
+                    </div>
+                    <div class="card-body">
+                        <textarea class="form-control me-2" placeholder="Type your message..."></textarea>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-success">Submit</button>
+                    </div>
+                </div>
+                
+                <br />
+                <div class="card">
+                    <div class="card-header">
+                        <p>Response Mode </p>
+                    </div>
+                    <div class="card-body">
+                        <div class="align-content-center">
+                            <select class="form-select" aria-label="Default select example">
+                                <option value="1">Balanced</option>
+                                <option value="2">Creative</option>
+                                <option value="3">Accuracy</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-success">Submit</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- OFFCANVAS Sidebar (Mobile only) -->
+    <div class="offcanvas offcanvas-start d-md-none" tabindex="-1" id="sidebarOffcanvas">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title">Sigma </h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body d-flex flex-column">
+            <SideBar></SideBar>
+        </div>
+    </div>
+</main>

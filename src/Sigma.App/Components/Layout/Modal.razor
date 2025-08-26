@@ -1,0 +1,78 @@
+﻿<div class="modal fade @(IsVisible ? "show d-block" : "")"
+     tabindex="-1"
+     @onclick="HandleBackdropClick"
+     @onkeydown="HandleKeyDown">
+
+    <div class="modal-dialog @Size" @onclick:stopPropagation="true">
+        <div class="modal-content">
+
+            @if (HeaderContent != null)
+            {
+                <div class="modal-header">
+                    @HeaderContent
+                </div>
+            }
+
+            @if (BodyContent != null)
+            {
+                <div class="modal-body">
+                    @BodyContent
+                </div>
+            }
+
+            @if (FooterContent != null)
+            {
+                <div class="modal-footer">
+                    @FooterContent
+                </div>
+            }
+
+        </div>
+    </div>
+</div>
+
+@if (IsVisible)
+{
+    <div class="modal-backdrop fade show"></div>
+}
+
+@code {
+    [Parameter] public RenderFragment HeaderContent { get; set; }
+    [Parameter] public RenderFragment BodyContent { get; set; }
+    [Parameter] public RenderFragment FooterContent { get; set; }
+
+    [Parameter] public bool IsVisible { get; set; }
+    [Parameter] public EventCallback<bool> IsVisibleChanged { get; set; }
+    [Parameter] public string Size { get; set; } = "modal-lg";
+    [Parameter] public bool CloseOnBackdropClick { get; set; } = true;
+
+    public async Task Show()
+    {
+        IsVisible = true;
+        await IsVisibleChanged.InvokeAsync(IsVisible);
+        StateHasChanged();
+    }
+
+    public async Task Hide()
+    {
+        IsVisible = false;
+        await IsVisibleChanged.InvokeAsync(IsVisible);
+        StateHasChanged();
+    }
+
+    private async Task HandleBackdropClick()
+    {
+        if (CloseOnBackdropClick)
+        {
+            await Hide();
+        }
+    }
+
+    private async Task HandleKeyDown(KeyboardEventArgs e)
+    {
+        if (e.Key == "Escape")
+        {
+            await Hide();
+        }
+    }
+}
